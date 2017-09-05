@@ -1,0 +1,473 @@
+  [1m[35m (293.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (49.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (52.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2294373376959684510)[0m
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotices (20170905153513)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (87.7ms)[0m  [1m[35mCREATE TABLE "notices" ("id" bigserial primary key, "title" character varying, "author" character varying, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170905153513"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-05 15:42:44.274417"], ["updated_at", "2017-09-05 15:42:44.274417"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2294373376959684510)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (30.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Oh Summer, haha first race war, huh?"], ["author", "Evil Morty"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:01.650257"], ["updated_at", "2017-09-05 15:49:01.650257"]]
+  [1m[35m (26.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "What about the reality where Hitler cured cancer, Morty? The answer is: Don't think about it."], ["author", "Beta VII"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:01.711462"], ["updated_at", "2017-09-05 15:49:01.711462"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It's fine, everything is fine. Theres an infinite number of realities Morty and in a few dozen of those I got lucky and turned everything back to normal."], ["author", "Scary Terry"], ["content", "You're Born Naked, The Rest Is Drag"], ["created_at", "2017-09-05 15:49:01.714882"], ["updated_at", "2017-09-05 15:49:01.714882"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Keep Summer safe."], ["author", "Evil Morty"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:01.717560"], ["updated_at", "2017-09-05 15:49:01.717560"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "No no, If I wanted to be sober, I wouldn’t have gotten drunk."], ["author", "Snowball"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:01.720885"], ["updated_at", "2017-09-05 15:49:01.720885"]]
+  [1m[35m (35.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aw, c'mon Rick. That doesn't seem so bad."], ["author", "Morty Jr."], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:01.799967"], ["updated_at", "2017-09-05 15:49:01.799967"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Little tip, Morty. Never clean DNA vials with your spit."], ["author", "King Jellybean"], ["content", "Glamazon!"], ["created_at", "2017-09-05 15:49:01.803271"], ["updated_at", "2017-09-05 15:49:01.803271"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That just sounds like slavery with extra steps."], ["author", "Tinkles"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:01.806433"], ["updated_at", "2017-09-05 15:49:01.806433"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Keep Summer safe."], ["author", "Squanchy"], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:01.809240"], ["updated_at", "2017-09-05 15:49:01.809240"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That just sounds like slavery with extra steps."], ["author", "Fart"], ["content", "Let the music play"], ["created_at", "2017-09-05 15:49:01.811940"], ["updated_at", "2017-09-05 15:49:01.811940"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Keep Summer safe."], ["author", "Jerry Smith"], ["content", "Don't Be Jealous Of My Boogie"], ["created_at", "2017-09-05 15:49:01.815651"], ["updated_at", "2017-09-05 15:49:01.815651"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "HI! I'M MR MEESEEKS! LOOK AT ME!"], ["author", "Beth's Mytholog"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:01.819200"], ["updated_at", "2017-09-05 15:49:01.819200"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Don’t even trip dawg."], ["author", "Mr. Needful"], ["content", "When The Going Gets Tough, The Tough Reinvent"], ["created_at", "2017-09-05 15:49:01.822707"], ["updated_at", "2017-09-05 15:49:01.822707"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Existence is pain to a meeseeks Jerry, and we will do anything to alleviate that pain."], ["author", "Birdperson"], ["content", "Shante, You Stay"], ["created_at", "2017-09-05 15:49:01.825139"], ["updated_at", "2017-09-05 15:49:01.825139"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Little tip, Morty. Never clean DNA vials with your spit."], ["author", "Fart"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:01.827505"], ["updated_at", "2017-09-05 15:49:01.827505"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Little tip, Morty. Never clean DNA vials with your spit."], ["author", "Stealy"], ["content", "Shante, You Stay"], ["created_at", "2017-09-05 15:49:01.829856"], ["updated_at", "2017-09-05 15:49:01.829856"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It's a figure of speech, Morty! They're bureaucrats! I don't respect them. Just keep shooting, Morty! You have no idea what prison is like here!"], ["author", "Lighthouse Chief"], ["content", "Don't Be Jealous Of My Boogie"], ["created_at", "2017-09-05 15:49:01.834348"], ["updated_at", "2017-09-05 15:49:01.834348"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It's a figure of speech, Morty! They're bureaucrats! I don't respect them. Just keep shooting, Morty! You have no idea what prison is like here!"], ["author", "Beth Smith"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:01.837232"], ["updated_at", "2017-09-05 15:49:01.837232"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This isn't Game of Thrones, Morty."], ["author", "Tammy Gueterman"], ["content", "Shante, You Stay"], ["created_at", "2017-09-05 15:49:01.841561"], ["updated_at", "2017-09-05 15:49:01.841561"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Uncertainty is inherently unsustainable. Eventually, everything either is or isn't."], ["author", "Abradolf Lincler"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:01.845525"], ["updated_at", "2017-09-05 15:49:01.845525"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pluto's a planet."], ["author", "Revolio 'Gearhead' Clockberg, Jr."], ["content", "When The Going Gets Tough, The Tough Reinvent"], ["created_at", "2017-09-05 15:49:01.849151"], ["updated_at", "2017-09-05 15:49:01.849151"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Existence is pain to a meeseeks Jerry, and we will do anything to alleviate that pain."], ["author", "Krombopulos Michael"], ["content", "You're Born Naked, The Rest Is Drag"], ["created_at", "2017-09-05 15:49:01.853529"], ["updated_at", "2017-09-05 15:49:01.853529"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Yo! What up my glip glops!"], ["author", "Unity"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:01.857262"], ["updated_at", "2017-09-05 15:49:01.857262"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WUBBA LUBBA DUB DUBS!!!"], ["author", "Evil Morty"], ["content", "Don't F*ck It Up"], ["created_at", "2017-09-05 15:49:01.862018"], ["updated_at", "2017-09-05 15:49:01.862018"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Having a family doesn't mean that you stop being an individual."], ["author", "Krombopulos Michael"], ["content", "Shante, Shante, Shante"], ["created_at", "2017-09-05 15:49:01.865141"], ["updated_at", "2017-09-05 15:49:01.865141"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Listen, I'm not the nicest guy in the universe, because I'm the smartest, and being nice is something stupid people do to hedge their bets."], ["author", "Beth Smith"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:01.868077"], ["updated_at", "2017-09-05 15:49:01.868077"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WUBBA LUBBA DUB DUBS!!!"], ["author", "Jerry's Mytholog"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:01.873513"], ["updated_at", "2017-09-05 15:49:01.873513"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pluto's a planet."], ["author", "Tophat Jones"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:01.877194"], ["updated_at", "2017-09-05 15:49:01.877194"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "What is my purpose. You pass butter. Oh My God. Yeah, Welcome to the club pal."], ["author", "Tophat Jones"], ["content", "You're Born Naked, The Rest Is Drag"], ["created_at", "2017-09-05 15:49:01.880394"], ["updated_at", "2017-09-05 15:49:01.880394"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Traditionally, science fairs are a father/son thing. Well, scientifically, traditions are an idiot thing."], ["author", "Arthricia"], ["content", "When The Going Gets Tough, The Tough Reinvent"], ["created_at", "2017-09-05 15:49:01.883854"], ["updated_at", "2017-09-05 15:49:01.883854"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't get it and I don't need to."], ["author", "Fart"], ["content", "Don't F*ck It Up"], ["created_at", "2017-09-05 15:49:01.886580"], ["updated_at", "2017-09-05 15:49:01.886580"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WUBBA LUBBA DUB DUBS!!!"], ["author", "Shrimply Pibbles"], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:01.889985"], ["updated_at", "2017-09-05 15:49:01.889985"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I like what you got."], ["author", "Jan Michael Vincent"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:01.893489"], ["updated_at", "2017-09-05 15:49:01.893489"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There is no god, Summer; gotta rip that band-aid off now you'll thank me later."], ["author", "Tiny Rick"], ["content", "Glamazon!"], ["created_at", "2017-09-05 15:49:01.896050"], ["updated_at", "2017-09-05 15:49:01.896050"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I like what you got."], ["author", "Tinkles"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:01.899443"], ["updated_at", "2017-09-05 15:49:01.899443"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Get off the high road Summer. We all got pink eye because you wouldn't stop texting on the toilet."], ["author", "Scary Terry"], ["content", "Let the music play"], ["created_at", "2017-09-05 15:49:01.903176"], ["updated_at", "2017-09-05 15:49:01.903176"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Don’t even trip dawg."], ["author", "Rick Sanchez"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:01.906400"], ["updated_at", "2017-09-05 15:49:01.906400"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aww, gee, you got me there Rick."], ["author", "Krombopulos Michael"], ["content", "Don't F*ck It Up"], ["created_at", "2017-09-05 15:49:01.909858"], ["updated_at", "2017-09-05 15:49:01.909858"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "He's not a hot girl. He can't just bail on his life and set up shop in someone else's."], ["author", "Stealy"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:01.913525"], ["updated_at", "2017-09-05 15:49:01.913525"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You're like Hitler, except...Hitler cared about Germany, or something."], ["author", "Squanchy"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:01.916995"], ["updated_at", "2017-09-05 15:49:01.916995"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Yo! What up my glip glops!"], ["author", "Unity"], ["content", "You Betta Work"], ["created_at", "2017-09-05 15:49:01.919399"], ["updated_at", "2017-09-05 15:49:01.919399"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WUBBA LUBBA DUB DUBS!!!"], ["author", "Tammy Gueterman"], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:01.921591"], ["updated_at", "2017-09-05 15:49:01.921591"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Little tip, Morty. Never clean DNA vials with your spit."], ["author", "Arthricia"], ["content", "When The Going Gets Tough, The Tough Reinvent"], ["created_at", "2017-09-05 15:49:01.923936"], ["updated_at", "2017-09-05 15:49:01.923936"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I'm more than just a hammer."], ["author", "Lighthouse Chief"], ["content", "Shante, Shante, Shante"], ["created_at", "2017-09-05 15:49:01.927244"], ["updated_at", "2017-09-05 15:49:01.927244"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "No no, If I wanted to be sober, I wouldn’t have gotten drunk."], ["author", "Squanchy"], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:01.930600"], ["updated_at", "2017-09-05 15:49:01.930600"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Uncertainty is inherently unsustainable. Eventually, everything either is or isn't."], ["author", "Evil Morty"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:01.934959"], ["updated_at", "2017-09-05 15:49:01.934959"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Oh yeah, If you think my Rick is Dead, then he is alive. If you think you're safe, then he's coming for you."], ["author", "Abradolf Lincler"], ["content", "That's Funny, Tell Another One"], ["created_at", "2017-09-05 15:49:01.938317"], ["updated_at", "2017-09-05 15:49:01.938317"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WUBBA LUBBA DUB DUBS!!!"], ["author", "Jan Michael Vincent"], ["content", "Let the music play"], ["created_at", "2017-09-05 15:49:01.941771"], ["updated_at", "2017-09-05 15:49:01.941771"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Little tip, Morty. Never clean DNA vials with your spit."], ["author", "Jan Michael Vincent"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:01.946131"], ["updated_at", "2017-09-05 15:49:01.946131"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aw, c'mon Rick. That doesn't seem so bad."], ["author", "Krombopulos Michael"], ["content", "You're Born Naked, The Rest Is Drag"], ["created_at", "2017-09-05 15:49:01.948949"], ["updated_at", "2017-09-05 15:49:01.948949"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The first rule of space travel kids is always check out distress beacons. Nine out of ten times it's a ship full of dead aliens and a bunch of free shit! One out of ten times it's a deadly trap, but... I'm ready to roll those dice!"], ["author", "Tammy Gueterman"], ["content", "You're Born Naked, The Rest Is Drag"], ["created_at", "2017-09-05 15:49:01.951553"], ["updated_at", "2017-09-05 15:49:01.951553"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I hate to break it to you, but what people call 'love' is just a chemical reaction that compels animals to breed. It hits hard Morty then it slowly fades leaving you stranded in a failing marriage. I did it. Your parents are going to do it. Break the cycle Morty, rise above, focus on science."], ["author", "Tinkles"], ["content", "Don't F*ck It Up"], ["created_at", "2017-09-05 15:49:01.954249"], ["updated_at", "2017-09-05 15:49:01.954249"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You're like Hitler, except...Hitler cared about Germany, or something."], ["author", "Revolio 'Gearhead' Clockberg, Jr."], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:01.985627"], ["updated_at", "2017-09-05 15:49:01.985627"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aw, c'mon Rick. That doesn't seem so bad."], ["author", "Unity"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:01.989878"], ["updated_at", "2017-09-05 15:49:01.989878"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "What is my purpose. You pass butter. Oh My God. Yeah, Welcome to the club pal."], ["author", "Mr. Meeseeks"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:01.992826"], ["updated_at", "2017-09-05 15:49:01.992826"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pluto's a planet."], ["author", "Arthricia"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:01.995976"], ["updated_at", "2017-09-05 15:49:01.995976"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "No no, If I wanted to be sober, I wouldn’t have gotten drunk."], ["author", "Krombopulos Michael"], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:01.999196"], ["updated_at", "2017-09-05 15:49:01.999196"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "What about the reality where Hitler cured cancer, Morty? The answer is: Don't think about it."], ["author", "Snowball"], ["content", "That's Funny, Tell Another One"], ["created_at", "2017-09-05 15:49:02.002540"], ["updated_at", "2017-09-05 15:49:02.002540"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Nobody exists on purpose. Nobody belongs anywhere. Everybody is going to die."], ["author", "Baby Legs"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:02.006168"], ["updated_at", "2017-09-05 15:49:02.006168"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You're like Hitler, except...Hitler cared about Germany, or something."], ["author", "Eyeholes Man"], ["content", "You Betta Work"], ["created_at", "2017-09-05 15:49:02.009289"], ["updated_at", "2017-09-05 15:49:02.009289"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sometimes science is a lot more art, than science. A lot of people don't get that."], ["author", "Evil Morty"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:02.013358"], ["updated_at", "2017-09-05 15:49:02.013358"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I want that Mulan McNugget sauce, Morty!"], ["author", "Tammy Gueterman"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:02.016309"], ["updated_at", "2017-09-05 15:49:02.016309"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aww, gee, you got me there Rick."], ["author", "Abradolf Lincler"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:02.019535"], ["updated_at", "2017-09-05 15:49:02.019535"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Snuffles was my slave name, you can call me snowball because my fur is pretty and white."], ["author", "Abradolf Lincler"], ["content", "Don't Be Jealous Of My Boogie"], ["created_at", "2017-09-05 15:49:02.022692"], ["updated_at", "2017-09-05 15:49:02.022692"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I want that Mulan McNugget sauce, Morty!"], ["author", "Mr. Poopybutthole"], ["content", "Lip-Sync for Your Life"], ["created_at", "2017-09-05 15:49:02.025281"], ["updated_at", "2017-09-05 15:49:02.025281"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Well then get your shit together. Get it all together and put it in a backpack, all your shit, so it's together. ...and if you gotta take it somewhere, take it somewhere ya know? Take it to the shit store and sell it, or put it in a shit museum. I don't care what you do, you just gotta get it together... Get your shit together."], ["author", "Dr. Glip-Glop"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:02.027451"], ["updated_at", "2017-09-05 15:49:02.027451"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I'm the devil. What should I do when I fail? Give myself an ice cream?"], ["author", "Tinkles"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:02.029907"], ["updated_at", "2017-09-05 15:49:02.029907"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Let me out, what you see is not the same person as me. My life's a lie. I'm not who you're looking. Let me out. Set me free. I'm really old. This isn't me. My real body is slowly dieing in a vat. Is anybody listening? Can anyone understand? Stop looking at me like that and actually help me. Help me. Help me I'm gunna die."], ["author", "Arthricia"], ["content", "Glamazon!"], ["created_at", "2017-09-05 15:49:02.033701"], ["updated_at", "2017-09-05 15:49:02.033701"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It's a figure of speech, Morty! They're bureaucrats! I don't respect them. Just keep shooting, Morty! You have no idea what prison is like here!"], ["author", "Tophat Jones"], ["content", "Don't F*ck It Up"], ["created_at", "2017-09-05 15:49:02.036953"], ["updated_at", "2017-09-05 15:49:02.036953"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Listen, I'm not the nicest guy in the universe, because I'm the smartest, and being nice is something stupid people do to hedge their bets."], ["author", "Snowball"], ["content", "Don't Be Jealous Of My Boogie"], ["created_at", "2017-09-05 15:49:02.039131"], ["updated_at", "2017-09-05 15:49:02.039131"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Having a family doesn't mean that you stop being an individual."], ["author", "Squanchy"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:02.041867"], ["updated_at", "2017-09-05 15:49:02.041867"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "What is my purpose. You pass butter. Oh My God. Yeah, Welcome to the club pal."], ["author", "Stealy"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:02.045240"], ["updated_at", "2017-09-05 15:49:02.045240"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Oh Summer, haha first race war, huh?"], ["author", "Snuffles"], ["content", "Glamazon!"], ["created_at", "2017-09-05 15:49:02.047539"], ["updated_at", "2017-09-05 15:49:02.047539"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Little tip, Morty. Never clean DNA vials with your spit."], ["author", "Unity"], ["content", "Don't F*ck It Up"], ["created_at", "2017-09-05 15:49:02.049586"], ["updated_at", "2017-09-05 15:49:02.049586"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I'm more than just a hammer."], ["author", "Dr. Glip-Glop"], ["content", "Sashay Away"], ["created_at", "2017-09-05 15:49:02.052352"], ["updated_at", "2017-09-05 15:49:02.052352"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This sounds like something The One True Morty might say."], ["author", "Rick Sanchez"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:02.054951"], ["updated_at", "2017-09-05 15:49:02.054951"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Can somebody just let me out of here? If I die in a cage I lose a bet."], ["author", "Mr. Meeseeks"], ["content", "You Betta Work"], ["created_at", "2017-09-05 15:49:02.057831"], ["updated_at", "2017-09-05 15:49:02.057831"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You're like Hitler, except...Hitler cared about Germany, or something."], ["author", "Arthricia"], ["content", "You're Born Naked, The Rest Is Drag"], ["created_at", "2017-09-05 15:49:02.059901"], ["updated_at", "2017-09-05 15:49:02.059901"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Can somebody just let me out of here? If I die in a cage I lose a bet."], ["author", "Shrimply Pibbles"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:02.061881"], ["updated_at", "2017-09-05 15:49:02.061881"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The first rule of space travel kids is always check out distress beacons. Nine out of ten times it's a ship full of dead aliens and a bunch of free shit! One out of ten times it's a deadly trap, but... I'm ready to roll those dice!"], ["author", "Tophat Jones"], ["content", "That's Funny, Tell Another One"], ["created_at", "2017-09-05 15:49:02.064463"], ["updated_at", "2017-09-05 15:49:02.064463"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Hello Jerry, come to rub my face in urine again?"], ["author", "Unity"], ["content", "Glamazon!"], ["created_at", "2017-09-05 15:49:02.066800"], ["updated_at", "2017-09-05 15:49:02.066800"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Let me out, what you see is not the same person as me. My life's a lie. I'm not who you're looking. Let me out. Set me free. I'm really old. This isn't me. My real body is slowly dieing in a vat. Is anybody listening? Can anyone understand? Stop looking at me like that and actually help me. Help me. Help me I'm gunna die."], ["author", "Jerry's Mytholog"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:02.068714"], ["updated_at", "2017-09-05 15:49:02.068714"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aww, gee, you got me there Rick."], ["author", "Krombopulos Michael"], ["content", "Let the music play"], ["created_at", "2017-09-05 15:49:02.070797"], ["updated_at", "2017-09-05 15:49:02.070797"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aww, gee, you got me there Rick."], ["author", "Mr. Meeseeks"], ["content", "Shante, Shante, Shante"], ["created_at", "2017-09-05 15:49:02.073651"], ["updated_at", "2017-09-05 15:49:02.073651"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Hello Jerry, come to rub my face in urine again?"], ["author", "Mr. Poopybutthole"], ["content", "Shante, Shante, Shante"], ["created_at", "2017-09-05 15:49:02.077546"], ["updated_at", "2017-09-05 15:49:02.077546"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aww, gee, you got me there Rick."], ["author", "Gazorpazorpfield"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:02.082149"], ["updated_at", "2017-09-05 15:49:02.082149"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Oh Summer, haha first race war, huh?"], ["author", "Shrimply Pibbles"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:02.089706"], ["updated_at", "2017-09-05 15:49:02.089706"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Keep Summer safe."], ["author", "Jan Michael Vincent"], ["content", "That's Funny, Tell Another One"], ["created_at", "2017-09-05 15:49:02.093800"], ["updated_at", "2017-09-05 15:49:02.093800"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It's a figure of speech, Morty! They're bureaucrats! I don't respect them. Just keep shooting, Morty! You have no idea what prison is like here!"], ["author", "Arthricia"], ["content", "You Betta Work"], ["created_at", "2017-09-05 15:49:02.097640"], ["updated_at", "2017-09-05 15:49:02.097640"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "So what if the most meaningful day in your life was a simulation operating at minimum complexity."], ["author", "Rick Sanchez"], ["content", "Shante, Shante, Shante"], ["created_at", "2017-09-05 15:49:02.100945"], ["updated_at", "2017-09-05 15:49:02.100945"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There is no god, Summer; gotta rip that band-aid off now you'll thank me later."], ["author", "Beth's Mytholog"], ["content", "Put The Bass In Your Walk"], ["created_at", "2017-09-05 15:49:02.103955"], ["updated_at", "2017-09-05 15:49:02.103955"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Snuffles was my slave name, you can call me snowball because my fur is pretty and white."], ["author", "Loggins"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:02.107927"], ["updated_at", "2017-09-05 15:49:02.107927"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That's the difference between you and me, Morty. I never go back to the carpet store."], ["author", "Shrimply Pibbles"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:02.111659"], ["updated_at", "2017-09-05 15:49:02.111659"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "So what if the most meaningful day in your life was a simulation operating at minimum complexity."], ["author", "Squanchy"], ["content", "Glamazon!"], ["created_at", "2017-09-05 15:49:02.114611"], ["updated_at", "2017-09-05 15:49:02.114611"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Well then get your shit together. Get it all together and put it in a backpack, all your shit, so it's together. ...and if you gotta take it somewhere, take it somewhere ya know? Take it to the shit store and sell it, or put it in a shit museum. I don't care what you do, you just gotta get it together... Get your shit together."], ["author", "Mr. Goldenfold"], ["content", "Let the music play"], ["created_at", "2017-09-05 15:49:02.116765"], ["updated_at", "2017-09-05 15:49:02.116765"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Snuffles was my slave name, you can call me snowball because my fur is pretty and white."], ["author", "Stealy"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:02.119550"], ["updated_at", "2017-09-05 15:49:02.119550"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I hate to break it to you, but what people call 'love' is just a chemical reaction that compels animals to breed. It hits hard Morty then it slowly fades leaving you stranded in a failing marriage. I did it. Your parents are going to do it. Break the cycle Morty, rise above, focus on science."], ["author", "Snuffles"], ["content", "Sissy That Walk"], ["created_at", "2017-09-05 15:49:02.122523"], ["updated_at", "2017-09-05 15:49:02.122523"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Where are my testicles, Summer?"], ["author", "Arthricia"], ["content", "Extravaganza Eleganza"], ["created_at", "2017-09-05 15:49:02.125053"], ["updated_at", "2017-09-05 15:49:02.125053"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't get it and I don't need to."], ["author", "Tiny Rick"], ["content", "Life Is About Using The Whole Box Of Crayons"], ["created_at", "2017-09-05 15:49:02.127406"], ["updated_at", "2017-09-05 15:49:02.127406"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I'm the devil. What should I do when I fail? Give myself an ice cream?"], ["author", "Fart"], ["content", "You Betta Work"], ["created_at", "2017-09-05 15:49:02.129734"], ["updated_at", "2017-09-05 15:49:02.129734"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-09-05 09:49:12 -0600
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brookebaxa/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brookebaxa/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (7.8ms)
+Completed 200 OK in 103ms (Views: 71.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notice" for 127.0.0.1 at 2017-09-05 09:49:20 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/notice"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 09:49:30 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (32.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 159ms (Views: 84.3ms | ActiveRecord: 43.7ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 10:50:24 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (5.0ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 66ms (Views: 60.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 10:58:23 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.3ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 100ms (Views: 74.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:02:28 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.0ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 57ms (Views: 47.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:39:25 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (2.6ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 151ms (Views: 74.1ms | ActiveRecord: 72.8ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:41:07 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (16.4ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 62ms (Views: 45.5ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:44:46 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.4ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:45:13 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.4ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 78ms (Views: 76.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:45:37 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.5ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:48:53 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 73ms (Views: 71.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:52:01 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.6ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 13:09:51 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (80.3ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 158ms (Views: 76.9ms | ActiveRecord: 80.3ms)
+
+
+Started POST "/notices" for 127.0.0.1 at 2017-09-05 13:10:06 -0600
+Processing by NoticesController#create as HTML
+  Parameters: {"author"=>"pickle rick", "title"=>"howdy", "content"=>"im a pickle bitch", "notice"=>{"title"=>"howdy", "author"=>"pickle rick", "content"=>"im a pickle bitch"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (42.1ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "howdy"], ["author", "pickle rick"], ["content", "im a pickle bitch"], ["created_at", "2017-09-05 19:10:07.026591"], ["updated_at", "2017-09-05 19:10:07.026591"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 56ms (Views: 0.7ms | ActiveRecord: 50.2ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 13:11:37 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.9ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/notices" for 127.0.0.1 at 2017-09-05 13:12:17 -0600
+Processing by NoticesController#create as HTML
+  Parameters: {"author"=>"Poop", "title"=>"Poop Announcement", "content"=>"we are garbage people, living on garbage island", "notice"=>{"title"=>"Poop Announcement", "author"=>"Poop", "content"=>"we are garbage people, living on garbage island"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Poop Announcement"], ["author", "Poop"], ["content", "we are garbage people, living on garbage island"], ["created_at", "2017-09-05 19:12:17.357633"], ["updated_at", "2017-09-05 19:12:17.357633"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 5ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-05 17:16:28 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brookebaxa/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brookebaxa/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 67ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 17:17:08 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 96ms (Views: 63.6ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 17:17:16 -0600
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-05 17:22:02 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
